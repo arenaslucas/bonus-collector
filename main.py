@@ -1,4 +1,5 @@
 import argparse
+import os
 from rbrapi import RocketBotRoyale
 from rbrapi.errors import AuthenticationError, CollectTimedBonusError, LootBoxError
 from logger import Logger
@@ -16,11 +17,12 @@ def parse_args():
 def main():
     args = parse_args()
 
-    email = args.email
-    password = args.password
+    # Prefer environment variables for secrets in CI/CD
+    email = args.email or os.getenv("EMAIL")
+    password = args.password or os.getenv("PASSWORD")
 
     if not email or not password:
-        print("❌ Email and password are required.")
+        print("❌ Missing credentials: please set EMAIL and PASSWORD environment variables.")
         return
 
     logger = None if args.no_logging else Logger(__name__)
