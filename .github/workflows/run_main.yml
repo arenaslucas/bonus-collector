@@ -1,4 +1,4 @@
-name: Run main.py every 35 minutes
+name: Run main.py every 30 minutes (approximately)
 
 on:
   schedule:
