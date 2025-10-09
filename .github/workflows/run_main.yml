@@ -1,4 +1,4 @@
-name: Run main.py every 30 minutes (approximately)
+name: Try to collect coins
 
 on:
   schedule:
