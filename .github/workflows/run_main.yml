@@ -2,7 +2,7 @@ name: Run main.py every 35 minutes
 
 on:
   schedule:
-    - cron: "*/35 * * * *"  # Every 35 minutes
+    - cron: "*/35 * * * *"
   workflow_dispatch:
 
 jobs:
@@ -22,5 +22,9 @@ jobs:
         run: |
           pip install rbrapi
 
-      - name: Run main.py
-        run: python main.py
+      - name: Run main.py with arguments
+        env:
+          EMAIL: ${{ secrets.EMAIL }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+        run: |
+          python main.py --email "$EMAIL" --password "$PASSWORD" --verbose
