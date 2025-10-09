@@ -10,7 +10,6 @@ def parse_args():
     parser.add_argument("--email", type=str, help="Email for RocketBotRoyale account")
     parser.add_argument("--password", type=str, help="Password for RocketBotRoyale account")
     parser.add_argument("--no-logging", action="store_true", help="Disable logging")
-    parser.add_argument("--auto-open-crates", action="store_true", help="Automatically open crates if available")
     return parser.parse_args()
 
 
