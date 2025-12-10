@@ -2,7 +2,7 @@ name: Try to collect coins
 
 on:
   schedule:
-    - cron: "*/33 * * * *"
+    - cron: "*/34 * * * *"
   workflow_dispatch:
 
 jobs:
