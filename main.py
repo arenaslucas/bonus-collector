@@ -21,7 +21,7 @@ def main():
     password = args.password or os.getenv("PASSWORD")
 
     if not email or not password:
-        print("❌ Missing credentials: please set EMAIL and PASSWORD environment variables.")
+        print("❌Missing credentials: please set EMAIL and PASSWORD environment variables.")
         return
 
     logger = None if args.no_logging else Logger(__name__)
