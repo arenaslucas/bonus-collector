@@ -9,7 +9,7 @@ RocketBotRoyale Bonus Collector — a Python automation tool that collects timed
 ## Installation
 
 ```bash
-pip install rbrapi
+pip install rbr-api-fork
 ```
 
 ## Running
