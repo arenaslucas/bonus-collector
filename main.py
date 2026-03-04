@@ -33,6 +33,13 @@ def main():
         if logger:
             logger.info("✅ Coins collected successfully.")
 
+        coins = client.account().wallet["coins"]
+        logger.info(f"Your coins now: {coins}.")
+
+        if args.auto_open_crates and coins >= 1000:
+            award = client.buy_crate()
+            logger.info(f"Crate award is: {award.award_id}")
+
     except AuthenticationError as e:
         if logger:
             logger.error(f"Unable to authenticate: {e}")
