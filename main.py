@@ -36,7 +36,7 @@ def main():
         coins = client.account().wallet["coins"]
         logger.info(f"Your coins now: {coins}.")
 
-        if args.auto_open_crates and coins >= 1000:
+        if coins >= 1000:
             award = client.buy_crate()
             logger.info(f"Crate award is: {award.award_id}")
 
