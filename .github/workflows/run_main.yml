@@ -20,7 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install rbrapi
+          pip install -r requirements.txt
 
       - name: Run main.py with arguments
         env:
