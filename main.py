@@ -36,19 +36,12 @@ def main():
         coins = client.account().wallet["coins"]
         logger.info(f"Your coins now: {coins}.")
 
-        if coins >= 1000:
-            award = client.buy_crate()
-            logger.info(f"Crate award is: {award.award_id}")
-
     except AuthenticationError as e:
         if logger:
             logger.error(f"Unable to authenticate: {e}")
     except CollectTimedBonusError as e:
         if logger:
             logger.info(f"Bonus not available yet: {e}")
-    except LootBoxError as e:
-        if logger:
-            logger.error(f"Unable to open crates: {e}")
     except Exception as e:
         if logger:
             logger.exception(f"Unexpected error: {e}")
