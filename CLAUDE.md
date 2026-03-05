@@ -16,20 +16,20 @@ pip install rbr-api-fork
 
 ```bash
 # With CLI args
-python main.py --email "your_email" --password "your_password"
+python collect_coins.py --email "your_email" --password "your_password"
 
 # With environment variables (preferred for CI/CD)
-EMAIL="your_email" PASSWORD="your_password" python main.py
+EMAIL="your_email" PASSWORD="your_password" python collect_coins.py
 
 # Suppress logging output
-python main.py --email "your_email" --password "your_password" --no-logging
+python collect_coins.py --email "your_email" --password "your_password" --no-logging
 ```
 
 ## Architecture
 
 The project is intentionally minimal:
 
-- [main.py](main.py) — Entry point. Parses args/env vars, authenticates with `RocketBotRoyale(email, password)`, calls `client.collect_timed_bonus()`, and handles `AuthenticationError`, `CollectTimedBonusError`, and `LootBoxError` from `rbrapi.errors`.
+- [collect_coins.py](collect_coins.py) — Entry point. Parses args/env vars, authenticates with `RocketBotRoyale(email, password)`, calls `client.collect_timed_bonus()`, and handles `AuthenticationError`, `CollectTimedBonusError`, and `LootBoxError` from `rbrapi.errors`.
 - [logger.py](logger.py) — Thin wrapper around Python's `logging` module. Pass `Logger(__name__)` or `None` to disable logging.
 
 ## CI/CD

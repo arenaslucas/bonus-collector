@@ -20,7 +20,7 @@ pip install rbrapi    # RocketBotRoyale API client library
 Run the script with Python, providing necessary arguments:
 
 ```bash
-python main.py --email "your_email" --password "your_password" [--no-logging]
+python collect_coins.py --email "your_email" --password "your_password" [--no-logging]
 ```
 
 ### Command-line Arguments
@@ -36,11 +36,11 @@ If you omit `--email` or `--password`, the script will prompt you to enter them 
 To run the script with logging enabled and auto-open crates:
 
 ```bash
-python main.py --email "your_email" --password "your_password"
+python collect_coins.py --email "your_email" --password "your_password"
 ```
 
 To run the script without logging and with auto-open crates:
 
 ```bash
-python main.py --email "your_email" --password "your_password" --no-loggin
+python collect_coins.py --email "your_email" --password "your_password" --no-loggin
 ```
